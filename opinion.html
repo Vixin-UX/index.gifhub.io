@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Opinión - CineNova</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0d0d;
+      color: #f4f4f4;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 10px 30px;
+    }
+
+    nav a {
+      color: #f4f4f4;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    header {
+      background-color: #e50914;
+      padding: 30px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+
+    section {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #1c1c1c;
+      border-radius: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #00cc99;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00aa77;
+    }
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #eee;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+    }
+    h2 {
+      color: #f9d71c;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #f9d71c;
+    }
+    select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 14px;
+      background-color: #2c2c2c;
+      color: #eee;
+    }
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 14px;
+      background-color: #e53935;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ff1744;
+    }
+    .mensaje {
+      margin-top: 20px;
+      background-color: #43a047;
+      padding: 12px;
+      text-align: center;
+      border-radius: 6px;
+      display: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 40px;
+      background-color: #111;
+      padding: 20px;
+      color: #aaa;
+    }
+
+
+  </style>
+</head>
+<body>
+<!--Menu de navegación-->
+  <nav>
+    <a href="index.html">Comprar boleto</a>
+    <a href="opinion.html">Opinión</a>
+  </nav>
+<!--encabezado-->
+  <header>
+    <h1>Tu opinión importa 🎬</h1>
+  </header>
+  <section>
+
+  <div class="container">
+    <h2>🎬 Encuesta sobre la película</h2>
+    <form id="encuestaForm">
+      <label for="p1">1. ¿Qué tan entretenida te pareció la película?</label>
+      <select id="p1" required>
+        <option value="">Selecciona</option>
+        <option>Muy entretenida</option>
+        <option>Entretenida</option>
+        <option>Regular</option>
+        <option>Aburrida</option>
+      </select>
+
+      <label for="p2">2. ¿Recomendarías esta película a un amigo?</label>
+      <select id="p2" required>
+        <option value="">Selecciona</option>
+        <option>Sí</option>
+        <option>No</option>
+      </select>
+
+      <label for="p3">3. ¿Cómo calificarías la actuación?</label>
+      <select id="p3" required>
+        <option value="">Selecciona</option>
+        <option>Excelente</option>
+        <option>Buena</option>
+        <option>Regular</option>
+        <option>Mala</option>
+      </select>
+
+      <label for="p4">4. ¿Te gustó la historia o trama?</label>
+      <select id="p4" required>
+        <option value="">Selecciona</option>
+        <option>Mucho</option>
+        <option>Algo</option>
+        <option>Poco</option>
+        <option>Nada</option>
+      </select>
+
+      <label for="p5">5. ¿Cómo calificarías los efectos visuales?</label>
+      <select id="p5" required>
+        <option value="">Selecciona</option>
+        <option>Excelente</option>
+        <option>Bueno</option>
+        <option>Regular</option>
+        <option>Malo</option>
+      </select>
+
+      <label for="p6">6. ¿Cómo calificarías la música o sonido?</label>
+      <select id="p6" required>
+        <option value="">Selecciona</option>
+        <option>Excelente</option>
+        <option>Bueno</option>
+        <option>Regular</option>
+        <option>Malo</option>
+      </select>
+
+      <label for="comentarios">7. Comentarios adicionales:</label>
+      <textarea id="comentarios" placeholder="Escribe tus comentarios aquí..."></textarea>
+
+      <button type="submit">Enviar respuesta</button>
+    </form>
+    <div class="mensaje" id="mensaje">
+      ✅ ¡Gracias por responder la encuesta!
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('encuestaForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('mensaje').style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
+  </section>
+
+<!--Mensaje de agradecimiento-->
+  <script>
+    function enviarEncuesta(event) {
+      event.preventDefault();
+      alert("¡Gracias por tu opinión! 🍿");
+      event.target.reset();
+    }
+  </script>
+  <!--Pie de página-->
+  <footer>
+  © 2025 CineNova. Gracias por tu visita.<br>
+  Equipo: Encarnación Quiroz Estefany, Violeta Giasel, Ticlia Brenda, Muñoz Carolina y Salinas Raquel.
+</footer>
+</body>
+
+</html>

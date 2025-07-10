@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+  <title>CineNova | Tu universo de emociones</title>
+  <style> 
+    * { box-sizing: border-box; }
+
+    body { 
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif; /*Tipografía principal*/
+      background-color: #0d0d0d;
+      color: #f4f4f4;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      background-color: #111;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+    }
+
+    nav a {
+      color: #f4f4f4;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e50914;
+    }
+
+    header {
+      background-color: #e50914;
+      padding: 30px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+
+    header p {
+      font-style: italic;
+      margin: 8px 0;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      border-left: 5px solid #e50914;
+      padding-left: 10px;
+      font-size: 1.8em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+/*Estilo de tarjetas*/
+    .card {
+      background-color: #1c1c1c;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .card.selected {
+      border: 2px solid #00ffcc;
+    }
+
+/*Animación*/
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img { /*Estilo de tarjeta de cartelera*/
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+    }
+
+    .contenido {
+      padding: 15px;
+    }
+
+    .contenido h3 {
+      margin-top: 0;
+      color: #ffd700;
+    }
+
+    .precio {
+      color: #00ffcc;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    
+/*Estilo de imagen de combos*/
+    .img-combo {
+      width: 110% !important;; 
+     height: auto !important;;
+      border-radius: 8px; /*Redondear borde*/
+      }
+
+/*Resumen de compra*/
+    .resumen {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    .resumen p {
+      font-size: 1.1em;
+    }
+
+    
+/*Pie de página*/
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #aaa;
+      margin-top: 30px;
+    }
+
+    .resumen button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00cc99;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .resumen button:hover {
+      background-color: #00aa77;
+    }
+
+  </style>
+</head>
+<body>
+<!--Menú de navegación-->
+  <nav>
+    <div><strong>CineNova</strong></div>
+    <div>
+      <a href="index.html">Comprar boleto</a>
+      <a href="opinion.html">Opinión</a> 
+    </div>
+  </nav>
+
+  <header>
+    <h1>CineNova</h1>
+    <p>Tu universo de emociones</p>
+    <p><em>¡Donde el cine cobra vida!</em></p>
+  </header>
+
+  <!-- Boletería -->
+<section id="cartelera">
+  <h2>Cartelera Actual</h2>
+  <div class="grid">
+    <!-- 6 Películas-Tarjetas -->
+    <div class="card" onclick="seleccionar('pelicula', this, 'Lilo y Stitch')">
+      <img src="https://fm.uc.edu.ve/wp-content/uploads/2025/03/Lilo_y_Stitch-842745284-large-768x960.jpg" />
+      <div class="contenido">
+        <h3>🎬 <b>Lilo y Stitch</b></h3>
+        <p><b>Género:</b> Comedia / Ciencia Ficción / Familiar</p>
+        <p><b>Duración:</b> 1h 25min</p>
+        <p><b>Clasificación:</b> Apta para todo público</p>
+        <p><i>En Hawái, Lilo, una niña solitaria, adopta lo que cree que es un perro, sin saber que es Stitch, un experimento alienígena. Juntos emprenden una divertida y emotiva aventura donde descubrirán que la familia es lo más importante.</i></p>
+        <p class="precio">S/18.00</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="seleccionar('pelicula', this, 'Cómo Entrenar a tu Dragón')">
+      <img src="https://m.media-amazon.com/images/M/MV5BMzEzMTgwNzktYTk4ZC00ZTQ1LTllZGYtNzY4MTk2ZDM1MzA0XkEyXkFqcGc@._V1_.jpg" />
+      <div class="contenido">
+        <h3>🎬 <b>Cómo Entrenar a tu Dragón</b></h3>
+        <p><b>Género:</b> Aventura / Fantasía / Familiar</p>
+        <p><b>Duración:</b> 2h</p>
+        <p><b>Clasificación:</b> Apta para todo público</p>
+        <p><i>En la isla vikinga de Berk, Hipo desafía las reglas al entablar amistad con un feroz dragón herido. Una nueva versión en acción real del clásico animado.</i></p>
+        <p class="precio">S/20.00</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="seleccionar('pelicula', this, 'Destino Final')">
+      <img src="https://f.rpp-noticias.io/2025/02/03/1700752final-destination-bloodlines-996402966-large-fotor-2025020320221jpg.jpg" />
+      <div class="contenido">
+        <h3>🎬 <b>Destino Final</b></h3>
+        <p><b>Género:</b> Terror / Suspenso / Sobrenatural</p>
+        <p><b>Duración:</b> 1h 50min</p>
+        <p><b>Clasificación:</b> Apta para todo público</p>
+        <p><i>Stefani descubre que su familia burló a la Muerte. Ahora, fuerzas sobrenaturales buscan restablecer el equilibrio.</i></p>
+        <p class="precio">S/16.00</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="seleccionar('pelicula', this, 'Superman (2025)')">
+      <img src="https://f.rpp-noticias.io/2025/05/14/1743737lm-sprman-vert-main-2764x4096-intljpg.jpg" />
+      <div class="contenido">
+        <h3>🎬 <b>Superman (2025)</b></h3>
+        <p><b>Género:</b> Acción / Superhéroes / Ciencia Ficción</p>
+        <p><b>Duración:</b> 2h 15min</p>
+        <p><b>Clasificación:</b> Mayores de 13 años</p>
+        <p><i>James Gunn reinventa a Superman en un nuevo comienzo para DC. El héroe más humano que nunca.</i></p>
+        <p class="precio">S/19.00</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="seleccionar('pelicula', this, 'Jurassic World: Rescate Extremo')">
+      <img src="https://pics.filmaffinity.com/Jurassic_World_El_renacer-952524729-large.jpg" />
+      <div class="contenido">
+        <h3>🎬 <b>Jurassic World: Rescate Extremo</b></h3>
+        <p><b>Género:</b> Thriller / Ciencia Ficción / Misterio</p>
+        <p><b>Duración:</b> 2h 14min</p>
+        <p><b>Clasificación:</b> Mayores de 14 años</p>
+        <p><i>Un equipo liderado por Scarlett Johansson se infiltra en la isla original del Parque Jurásico. La clave de la humanidad está en su ADN.</i></p>
+        <p class="precio">S/21.00</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="seleccionar('pelicula', this, 'El Último Viaje')">
+      <img src="https://f.rpp-noticias.io/2025/03/14/1717670lm-f1-vert-main-2764x4096-intljpg.jpg" />
+      <div class="contenido">
+        <h3>🎬 <b>El Último Viaje</b></h3>
+        <p><b>Género:</b> Drama / Ciencia Ficción / Aventura</p>
+        <p><b>Duración:</b> 2h</p>
+        <p><b>Clasificación:</b> Mayores de 12 años</p>
+        <p><i>Un astronauta enfermo regresa a la Tierra por última vez para reconciliarse con su hija. Una historia de despedida y redención.</i></p>
+        <p class="precio">S/17.00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Sección de combos-->
+<section id="combos">
+  <h2>Combos de Comida</h2>
+  <div class="grid">
+
+
+    <!-- 6 Combos-Tarjetas -->
+    <div class="card" onclick="seleccionar('combo', this, 'Combo Clásico')">
+      <img src="https://cdn.inoutdelivery.com/cinecolombia.inoutdelivery.com/sm/1709247175548-3.-Combo-Pareja.png" >
+      <div class="contenido">
+        <h3>Combo Clásico</h3>
+        <p>1 Popcorn + 2 Gaseosas</p>
+        <i>Combo completo para dos personas que incluye un balde grande de canchita, dos botellas de Coca-Cola de 600 ml.</i>
+        <p class="precio">S/25.90</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="seleccionar('combo', this, 'Combo Pareja')">
+      <img src="https://cdn.inoutdelivery.com/cinecolombia.inoutdelivery.com/sm/1709256925189-8.-Super-combo-para-dos.png">
+      <div class="contenido">
+        <h3>Combo Pareja</h3>
+        <p>1 Popcorn + 2 Gaseosas + 2 hot dogs</p>
+        <i>Combo completo para dos personas que incluye un balde grande de canchita, dos hot dogs y dos botellas de Coca-Cola de 600 ml.</i>
+        <p class="precio">S/35.90</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="seleccionar('combo', this, 'Combo Familiar')">
+      <img src="https://cdn.inoutdelivery.com/cinecolombia.inoutdelivery.com/sm/1709247865188-6.Mega-Combo.png">
+      <div class="contenido">
+        <h3>Combo Familiar</h3>
+        <p>2 Popcorn grandes + 4 hot dogs + 2 Paquetes de nacho con queso + 2 chocolatinas jet y 4 botellas de Coca-Cola</p>
+        <i>Súper combo familiar con todo para ver tu película en familia.</i>
+        <p class="precio">S/69.90</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="seleccionar('combo', this, 'Combo Dulzura')">
+      <img src="https://cdn.inoutdelivery.com/cinecolombia.inoutdelivery.com/sm/1745252094081-Combo%20deli%20domicilios.jpg">
+      <div class="contenido">
+        <h3>Combo Dulzura</h3>
+        <p>1 Gaseosa personal + Popcorn gigante + 1 salsa de queso + 1 Chocoramo</p>
+        <i>Ideal para disfrutar con el sabor clásico de palomitas y un toque dulce.</i>
+        <p class="precio">S/39.90</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="seleccionar('combo', this, 'Combo Taquillazo')">
+      <img src="https://archivos-cms.cinecolombia.com/images/6/6/4/7/7466-9-esl-CO/6ce5ad738478-2532cine-colombia.jpg" class="img-combo">
+      <div class="contenido">
+        <h3>Combo Taquillazo</h3>
+        <p>2 Gaseosas + Popcorn + Sandwich + Hotdog</p>
+        <i>Combo completo para dos personas que quieren variedad sin perder sabor.</i>
+        <p class="precio">S/35.90</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="seleccionar('combo', this, 'Combo Solo pa\' uno')">
+      <img src="https://lh3.googleusercontent.com/proxy/_bT_nZSMFgWxLjPMJAE1QXXwS_CIRk5s4ls3mQU5cm9mW2Lk9NhVa40X4iPMVF5_9n-U2k5flYT7KaR1CjVArPjhD-2-y2N2Sn-Ajfg" class="img-combo">
+      <div class="contenido">
+        <h3>Combo "Solo pa' uno"</h3>
+        <p>1 gaseosa + cancha + hot dog</p>
+        <i>Perfecto para una función individual. Tu peli, tu combo, tu momento.</i>
+        <p class="precio">S/19.90</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- RESUMEN DE COMPRA -->
+  <section class="resumen">
+    <h2>Tu selección</h2>
+    <p>Película: <strong id="peliculaElegida">Ninguna</strong></p>
+    <p>Combo: <strong id="comboElegido">Ninguno</strong></p>
+    <button onclick="comprar()">Comprar</button>
+  </section>
+
+  <script>
+    let seleccion = {
+      pelicula: null,
+      combo: null
+    };
+
+    function seleccionar(tipo, elemento, nombre) {
+      const grupo = tipo === 'pelicula' ? 'cartelera' : 'combos';
+
+      document.querySelectorAll(`#${grupo} .card`).forEach(card => {
+        card.classList.remove('selected');
+      });
+
+      elemento.classList.add('selected');
+      seleccion[tipo] = nombre;
+
+      document.getElementById(tipo === 'pelicula' ? 'peliculaElegida' : 'comboElegido').textContent = nombre;
+    }
+
+    function comprar() {
+      if (!seleccion.pelicula || !seleccion.combo) {
+        alert("Por favor selecciona una película y un combo.");
+      } else {
+        alert(`¡Gracias por tu compra!\nPelícula: ${seleccion.pelicula}\nCombo: ${seleccion.combo}`);
+      }
+    }
+  </script>
+<!--Pie de página-->
+ <footer>
+  © 2025 CineNova. Gracias por tu visita.<br>
+  Equipo: Encarnación Quiroz Estefany, Violeta Giasel, Ticlia Brenda, Muñoz Carolina y Salinas Raquel.
+</footer>
+</body>
+</html>
